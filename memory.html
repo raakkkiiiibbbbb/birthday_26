@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f0e8"><title>Little pieces of us · Emma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f0e8;--ink:#5b4a42;--soft:#b98a82;--tile:#eadfd3;--sans:'Quicksand',system-ui,sans-serif;--hand:'Caveat',cursive}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+.top{max-width:760px;margin:auto;padding:26px 22px 0}.back{font-size:13px;font-weight:700;color:var(--soft);text-decoration:none}
+.hero{min-height:68svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 24px}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--soft);font-weight:700;margin-bottom:16px}
+h1{font-size:clamp(40px,10vw,62px);line-height:1.08;font-weight:600;letter-spacing:-1.5px}h1 span{display:block;color:var(--soft);font:600 1.2em var(--hand);letter-spacing:0}
+.hero p{max-width:330px;margin:20px auto 0;font:24px/1.3 var(--hand);color:var(--soft)}.scroll{margin-top:42px;font-size:10px;letter-spacing:2px;opacity:.5}
+section{max-width:760px;margin:auto;padding:54px 22px}.head{text-align:center;margin-bottom:30px}.head .eyebrow{margin-bottom:9px}h2{font-size:25px;font-weight:600}.head p{font-size:13px;line-height:1.7;color:var(--soft);margin:9px auto 0;max-width:340px}
+.crochet{display:grid;gap:20px}.process{display:grid;grid-template-columns:1fr 1fr;gap:15px;align-items:center}.process:nth-child(even) .photo{order:2}
+.photo{aspect-ratio:4/5;background:var(--tile);border-radius:7px;overflow:hidden;box-shadow:0 7px 20px #5b4a4210}.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.note{padding:7px 3px}.step{font-size:10px;letter-spacing:2px;color:var(--soft);font-weight:700;margin-bottom:8px}.note h3{font:600 27px/1.1 var(--hand);margin-bottom:8px}.note p{font-size:12px;line-height:1.8;opacity:.78}
+.placeholder{height:100%;min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:12px;color:var(--soft);font-size:11px;gap:8px}.placeholder b{font:600 25px var(--hand)}
+.divider{width:42px;height:1px;background:#d9c4b5;margin:34px auto}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.item{position:relative;aspect-ratio:4/5;border:0;border-radius:6px;padding:0;overflow:hidden;background:var(--tile);cursor:zoom-in}.item:nth-child(3n){aspect-ratio:1/1}.item img{width:100%;height:100%;display:block;object-fit:cover}.caption{position:absolute;bottom:0;left:0;right:0;padding:28px 12px 10px;color:white;text-align:left;font:20px var(--hand);text-shadow:0 1px 5px #43362f;background:linear-gradient(transparent,#2d211c80);pointer-events:none}
+.end{max-width:500px;margin:auto;padding:70px 24px 90px;text-align:center}.end p{font:27px/1.3 var(--hand);color:var(--soft)}.end small{display:block;margin-top:18px;font-size:10px;letter-spacing:2px;opacity:.5}
+.lightbox{display:none;position:fixed;inset:0;z-index:5;background:#302520f2;align-items:center;justify-content:center;padding:22px}.lightbox.open{display:flex}.lightbox img{max-width:100%;max-height:82svh;object-fit:contain}.close{position:absolute;right:20px;top:calc(16px + env(safe-area-inset-top));border:0;background:none;color:white;font-size:32px;padding:8px}
+.reveal{opacity:0;transform:translateY(16px);transition:.8s}.reveal.show{opacity:1;transform:none}
+@media(min-width:650px){section{padding:70px 30px}.crochet{gap:26px}.process{gap:28px}.gallery{grid-template-columns:repeat(3,1fr);gap:16px}.item:nth-child(3n){aspect-ratio:4/5}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style></head>
+<body>
+<div class="top"><a class="back" href="index.html">← back to your birthday page</a></div>
+<header class="hero"><div class="eyebrow">a little collection, just for you</div><h1>Little pieces of <span>us.</span></h1><p>Some things take time. You're worth every little bit of it.</p><div class="scroll">SCROLL A LITTLE ↓</div></header>
+
+<section class="reveal">
+<div class="head"><div class="eyebrow">made by hand, with love</div><h2>A little something for you</h2><p>A few moments from making your gift. Every stitch has a little bit of you in it.</p></div>
+<div class="crochet">
+<article class="process"><div class="photo"><img src="images/crochet-1.jpg" alt="Yarn and materials" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>the beginning</b><span>add crochet-1.jpg</span></div>'"></div><div class="note"><div class="step">01 · THE BEGINNING</div><h3>Picking the yarn</h3><p>It started with a little idea, some yarn, and the thought of you.</p></div></article>
+<article class="process"><div class="photo"><img src="images/crochet-2.jpg" alt="Crochet gift in progress" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>one stitch at a time</b><span>add crochet-2.jpg</span></div>'"></div><div class="note"><div class="step">02 · IN PROGRESS</div><h3>One stitch at a time</h3><p>A little progress, a few retries, and a lot of patience.</p></div></article>
+<article class="process"><div class="photo"><img src="images/crochet-3.jpg" alt="Finished crochet gift" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>just for you</b><span>add crochet-3.jpg</span></div>'"></div><div class="note"><div class="step">03 · ALMOST YOURS</div><h3>Made for you</h3><p>Not perfect, maybe. But made carefully, and made only with you in mind.</p></div></article>
+</div></section>
+<div class="divider"></div>
+<section class="reveal"><div class="head"><div class="eyebrow">my favourite view</div><h2>And then, there's you.</h2><p>A few pictures of my favourite person. I could never pick just one.</p></div>
+<div class="gallery" id="gallery">
+<button class="item" data-full="photos/emma-1.jpg" aria-label="Open photo"><img src="photos/emma-1.jpg" alt="Emma" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>you, being you</b><span>add emma-1.jpg</span></div>'"><span class="caption">you, being you</span></button>
+<button class="item" data-full="photos/emma-2.jpg" aria-label="Open photo"><img src="photos/emma-2.jpg" alt="Emma" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>that smile</b><span>add emma-2.jpg</span></div>'"><span class="caption">that smile</span></button>
+<button class="item" data-full="photos/emma-3.jpg" aria-label="Open photo"><img src="photos/emma-3.jpg" alt="Emma" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>my pretty girl</b><span>add emma-3.jpg</span></div>'"><span class="caption">my pretty girl</span></button>
+<button class="item" data-full="photos/emma-4.jpg" aria-label="Open photo"><img src="photos/emma-4.jpg" alt="Emma" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>a little moment</b><span>add emma-4.jpg</span></div>'"><span class="caption">a little moment</span></button>
+<button class="item" data-full="photos/emma-5.jpg" aria-label="Open photo"><img src="photos/emma-5.jpg" alt="Emma" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>always you</b><span>add emma-5.jpg</span></div>'"><span class="caption">always you</span></button>
+<button class="item" data-full="photos/emma-6.jpg" aria-label="Open photo"><img src="photos/emma-6.jpg" alt="Emma" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>my favourite</b><span>add emma-6.jpg</span></div>'"><span class="caption">my favourite</span></button>
+</div></section>
+<footer class="end reveal"><div class="divider"></div><p>And if I had to choose all over again,<br>I'd still choose you.</p><small>ALWAYS, RAKIB ♡</small></footer>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="close" id="close" aria-label="Close">×</button><img id="large" alt="Selected memory"></div>
+<script>
+const box=document.getElementById('lightbox'),large=document.getElementById('large');
+document.querySelectorAll('.item').forEach(b=>b.addEventListener('click',()=>{const im=b.querySelector('img');if(!im||!im.complete||!im.naturalWidth)return;large.src=b.dataset.full;box.classList.add('open')}));
+function closeBox(){box.classList.remove('open');large.removeAttribute('src')}
+document.getElementById('close').addEventListener('click',closeBox);box.addEventListener('click',e=>{if(e.target===box)closeBox()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox()});
+if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x))}else document.querySelectorAll('.reveal').forEach(x=>x.classList.add('show'));
+</script></body></html>
