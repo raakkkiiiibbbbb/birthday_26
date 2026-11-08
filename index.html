@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Happy Birthday Emma</title>
+<script>if (/[?&]back=1(?:&|$)/.test(location.search)) document.documentElement.className += ' back';</script>
 <meta name="theme-color" content="#f6f0e8" id="themeColor">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -168,6 +169,14 @@
     * { animation: none !important; transition: none !important; }
     .reveal { opacity: 1; transform: none; }
   }
+
+  /* welcome-back mode: index.html?back=1 skips the intro */
+  html.back #intro, html.back #err { display: none !important; }
+  html.back body.locked { overflow: visible; height: auto; background: var(--bg); }
+  html.back #main { display: block; }
+  html.back #main .magic, html.back #main .msg, html.back #main .sig { animation: none; }
+  html.back #main .hero { animation: rise .8s both; }
+  html.back .stage, html.back .stage *, html.back .cat-note, html.back .memory-btn { transition: none !important; }
 </style>
 </head>
 <body class="locked">
@@ -270,7 +279,17 @@
     if (i < stopAt) { i++; setTimeout(typeNext, 110); }
     else setTimeout(breakIt, 450);
   }
-  setTimeout(typeNext, 700);
+  if (document.documentElement.classList.contains('back')) {
+    document.body.classList.remove('locked');
+    $('title').innerHTML = 'Happy Birthday,<br><span>Emma</span>';
+    $('main').style.display = 'block';
+    $('main').classList.add('on');
+    $('stage').classList.add('open');
+    $('catNote').textContent = 'psst... tap me, I mean pet me...';
+    $('memBtn').classList.add('show');
+  } else {
+    setTimeout(typeNext, 700);
+  }
 
   // ---- stage 2: it breaks ----
   function setTheme(c) { var m = $('themeColor'); if (m) m.setAttribute('content', c); }
