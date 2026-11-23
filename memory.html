@@ -1,48 +1,274 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f6f0e8"><title>Little pieces of us · Emma</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f0e8">
+<title>Little pieces of us · Emma</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f0e8;--ink:#5b4a42;--soft:#b98a82;--tile:#eadfd3;--sans:'Quicksand',system-ui,sans-serif;--hand:'Caveat',cursive}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
-.top{max-width:760px;margin:auto;padding:26px 22px 0}.back{font-size:13px;font-weight:700;color:var(--soft);text-decoration:none}
-.hero{min-height:68svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 24px}
-.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--soft);font-weight:700;margin-bottom:16px}
-h1{font-size:clamp(40px,10vw,62px);line-height:1.08;font-weight:600;letter-spacing:-1.5px}h1 span{display:block;color:var(--soft);font:600 1.2em var(--hand);letter-spacing:0}
-.hero p{max-width:330px;margin:20px auto 0;font:24px/1.3 var(--hand);color:var(--soft)}.scroll{margin-top:42px;font-size:10px;letter-spacing:2px;opacity:.5}
-section{max-width:760px;margin:auto;padding:54px 22px}.head{text-align:center;margin-bottom:30px}.head .eyebrow{margin-bottom:9px}h2{font-size:25px;font-weight:600}.head p{font-size:13px;line-height:1.7;color:var(--soft);margin:9px auto 0;max-width:340px}
-.crochet{display:grid;gap:20px}.process{display:grid;grid-template-columns:1fr 1fr;gap:15px;align-items:center}.process:nth-child(even) .photo{order:2}
-.photo{aspect-ratio:4/5;background:var(--tile);border-radius:7px;overflow:hidden;box-shadow:0 7px 20px #5b4a4210}.photo img{width:100%;height:100%;object-fit:cover;display:block}
-.note{padding:7px 3px}.step{font-size:10px;letter-spacing:2px;color:var(--soft);font-weight:700;margin-bottom:8px}.note h3{font:600 27px/1.1 var(--hand);margin-bottom:8px}.note p{font-size:12px;line-height:1.8;opacity:.78}
-.placeholder{height:100%;min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:12px;color:var(--soft);font-size:11px;gap:8px}.placeholder b{font:600 25px var(--hand)}
-.divider{width:42px;height:1px;background:#d9c4b5;margin:34px auto}
-.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.item{position:relative;aspect-ratio:4/5;border:0;border-radius:6px;padding:0;overflow:hidden;background:var(--tile);cursor:zoom-in}.item:nth-child(3n){aspect-ratio:1/1}.item img{width:100%;height:100%;display:block;object-fit:cover}.caption{position:absolute;bottom:0;left:0;right:0;padding:28px 12px 10px;color:white;text-align:left;font:20px var(--hand);text-shadow:0 1px 5px #43362f;background:linear-gradient(transparent,#2d211c80);pointer-events:none}
-.end{max-width:500px;margin:auto;padding:70px 24px 90px;text-align:center}.end p{font:27px/1.3 var(--hand);color:var(--soft)}.end small{display:block;margin-top:18px;font-size:10px;letter-spacing:2px;opacity:.5}
-.lightbox{display:none;position:fixed;inset:0;z-index:5;background:#302520f2;align-items:center;justify-content:center;padding:22px}.lightbox.open{display:flex}.lightbox img{max-width:100%;max-height:82svh;object-fit:contain}.close{position:absolute;right:20px;top:calc(16px + env(safe-area-inset-top));border:0;background:none;color:white;font-size:32px;padding:8px}
-.reveal{opacity:0;transform:translateY(16px);transition:.8s}.reveal.show{opacity:1;transform:none}
-@media(min-width:650px){section{padding:70px 30px}.crochet{gap:26px}.process{gap:28px}.gallery{grid-template-columns:repeat(3,1fr);gap:16px}.item:nth-child(3n){aspect-ratio:4/5}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
-</style></head>
-<body>
-<div class="top"><a class="back" href="index.html?back=1">← back to your birthday page</a></div>
-<header class="hero"><div class="eyebrow">a little collection, just for you</div><h1> <span></span></h1><p>Some things take time. You're worth every little bit of it.</p><div class="scroll">SCROLL A LITTLE ↓</div></header>
+  :root {
+    --bg: #f6f0e8; --ink: #5b4a42; --soft: #b98a82; --rose: #e8b9b0; --tile: #eadfd3; --paper: #fffaf3; --line: #d6bfb1;
+    --sans: 'Quicksand', 'Nunito', ui-rounded, system-ui, sans-serif;
+    --hand: 'Caveat', 'Bradley Hand', 'Segoe Script', cursive;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans); color: var(--ink); overflow-x: hidden; -webkit-text-size-adjust: 100%;
+    background:
+      radial-gradient(60% 38% at 88% 0%, #f2e0d7 0, transparent 70%),
+      radial-gradient(55% 30% at 0% 46%, #efe5d6 0, transparent 70%),
+      radial-gradient(60% 30% at 100% 86%, #f2e0d7 0, transparent 70%),
+      var(--bg);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 
-<section class="reveal">
-<div class="head"><div class="eyebrow">made by hand, with love</div><h2>A little something for you</h2><p>A few moments from making your gift. Every stitch has a little bit of you in it.</p></div>
-<div class="crochet">
-<article class="process"><div class="photo"><img src="images/crochet-1.jpg" alt="Yarn and materials" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>the beginning</b><span>add crochet-1.jpg</span></div>'"></div><div class="note"><div class="step">01 · THE BEGINNING</div><h3>Picking the yarn</h3><p>It started with a little idea, some yarn, and the thought of you.</p></div></article>
-<article class="process"><div class="photo"><img src="images/crochet-2.jpg" alt="Crochet gift in progress" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>one stitch at a time</b><span>add crochet-2.jpg</span></div>'"></div><div class="note"><div class="step">02 · IN PROGRESS</div><h3>One stitch at a time</h3><p>A little progress, a few retries, and a lot of patience.</p></div></article>
-<article class="process"><div class="photo"><img src="images/crochet-3.jpg" alt="Finished crochet gift" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;placeholder&quot;><b>just for you</b><span>add crochet-3.jpg</span></div>'"></div><div class="note"><div class="step">03 · ALMOST YOURS</div><h3>Made for you</h3><p>Not perfect, maybe. But made carefully, and made only with you in mind.</p></div></article>
-<footer class="end reveal"><div class="divider"></div><p>And if I had to choose all over again,<br>I'd still choose you.</p><small>ALWAYS, RAKIB ♡</small></footer>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="close" id="close" aria-label="Close">×</button><img id="large" alt="Selected memory"></div>
+  /* ---------- top bar ---------- */
+  .topbar { position: sticky; top: 0; z-index: 10; padding: calc(10px + env(safe-area-inset-top, 0px)) 16px 10px; background: rgba(246,240,232,.82); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .topbar { transition: transform .35s ease, opacity .35s ease; }
+  .topbar.hide { transform: translateY(-110%); opacity: 0; pointer-events: none; }
+  .back, .back-btm { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--paper); color: var(--soft); font-size: 13px; font-weight: 700; text-decoration: none; box-shadow: 0 2px 10px rgba(91,74,66,.1); -webkit-tap-highlight-color: transparent; transition: transform .2s; }
+  .back:active, .back-btm:active { transform: scale(.96); }
+
+  /* ---------- hero ---------- */
+  .hero { min-height: calc(100svh - 62px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 34px 24px 56px; }
+  .yarn { width: 104px; height: auto; margin-bottom: 18px; overflow: visible; animation: floaty 5s ease-in-out infinite; }
+  .yarn .thread { stroke-dasharray: 130; stroke-dashoffset: 130; animation: draw 2.4s .5s ease forwards; }
+  .eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--soft); font-weight: 700; margin-bottom: 14px; }
+  h1 { font-size: clamp(42px, 12vw, 72px); line-height: 1.05; font-weight: 600; letter-spacing: -1.5px; }
+  h1 span { display: block; color: var(--soft); font: 600 1.3em/1 var(--hand); letter-spacing: 0; margin-top: 4px; }
+  .sub { max-width: 340px; margin: 22px auto 0; font: 500 26px/1.3 var(--hand); color: var(--soft); }
+  .scroll { margin-top: 44px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 10px; letter-spacing: 2.5px; font-weight: 700; color: var(--soft); text-decoration: none; opacity: .7; }
+  .scroll i { font-style: normal; font-size: 18px; animation: bob 1.8s ease-in-out infinite; }
+  .hero > * { animation: rise 1s both; }
+  .hero > .yarn { animation: floaty 5s ease-in-out infinite, rise 1s both; }
+  .hero > :nth-child(2) { animation-delay: .15s; } .hero > :nth-child(3) { animation-delay: .3s; } .hero > :nth-child(4) { animation-delay: .5s; } .hero > :nth-child(5) { animation-delay: .8s; }
+
+  /* ---------- story ---------- */
+  .story { max-width: 960px; margin: 0 auto; padding: 36px 22px 24px; }
+  .head { text-align: center; margin-bottom: 44px; }
+  .head .eyebrow { margin-bottom: 10px; }
+  h2 { font-size: 27px; font-weight: 600; line-height: 1.2; }
+  .head p { max-width: 380px; margin: 12px auto 0; font-size: 14px; line-height: 1.8; color: var(--soft); }
+
+  .timeline { position: relative; display: grid; gap: 58px; }
+  .timeline::before { content: ""; position: absolute; left: 14px; top: 10px; bottom: 10px; border-left: 2.5px dashed var(--line); }   /* the stitched thread */
+  .step { position: relative; padding-left: 50px; display: grid; gap: 22px; }
+  .knot { position: absolute; left: 0; top: 6px; width: 30px; height: 30px; border-radius: 50%; background: var(--rose); border: 4px solid var(--bg); box-shadow: 0 0 0 2px var(--line); }
+  .knot::after { content: ""; position: absolute; inset: 7px; border-radius: 50%; background: var(--paper); }
+
+  .frame { position: relative; width: min(100%, 360px); padding: 11px 11px 14px; background: var(--paper); border-radius: 6px; box-shadow: 0 14px 34px rgba(91,74,66,.17); transform: rotate(var(--tilt, 0deg)); transition: transform .4s; }
+  .frame::before { content: ""; position: absolute; top: -13px; left: 50%; width: 92px; height: 26px; margin-left: -46px; background: rgba(232,185,176,.78); transform: rotate(-3deg); box-shadow: 0 1px 3px rgba(91,74,66,.12); }
+  .frame:hover { transform: rotate(0deg) scale(1.01); }
+  .photo { position: relative; aspect-ratio: 4 / 5; border-radius: 3px; overflow: hidden; background: var(--tile); cursor: zoom-in; -webkit-tap-highlight-color: transparent; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo.empty { cursor: default; }
+  .placeholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 14px; text-align: center; color: var(--soft); }
+  .placeholder b { font: 600 28px/1.1 var(--hand); }
+  .placeholder span { font-size: 11px; }
+  .cap { text-align: center; font: 600 24px/1 var(--hand); color: var(--soft); padding-top: 12px; }
+
+  .label { font-size: 10px; letter-spacing: 2px; font-weight: 700; color: var(--soft); margin-bottom: 8px; }
+  .text h3 { font: 600 36px/1.05 var(--hand); margin-bottom: 10px; }
+  .text p { font-size: 15px; line-height: 1.85; opacity: .78; max-width: 360px; }
+
+  /* ---------- closing ---------- */
+  .closing { max-width: 580px; margin: 0 auto; padding: 56px 26px 40px; text-align: center; }
+  .divider { display: flex; align-items: center; gap: 16px; justify-content: center; margin-bottom: 34px; }
+  .divider::before, .divider::after { content: ""; width: 56px; height: 1px; background: var(--line); }
+  .heart-btn { width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--paper); color: var(--soft); font-size: 21px; cursor: pointer; box-shadow: 0 4px 14px rgba(91,74,66,.14); -webkit-tap-highlight-color: transparent; animation: beat 2.2s ease-in-out infinite; }
+  .heart-btn:active { transform: scale(.9); }
+  .more { font: 500 29px/1.35 var(--hand); }
+  .choose { margin-top: 34px; font: 600 38px/1.2 var(--hand); color: var(--soft); }
+  .choose span { text-decoration: underline wavy var(--rose); text-decoration-thickness: 2px; text-underline-offset: 7px; }
+  .ps { position: relative; display: inline-block; max-width: 360px; margin-top: 56px; padding: 26px 26px 24px; background: var(--paper); border-radius: 4px; box-shadow: 0 12px 28px rgba(91,74,66,.15); transform: rotate(1.4deg); font: 500 25px/1.35 var(--hand); }
+  .ps::before { content: ""; position: absolute; top: -12px; left: 50%; width: 80px; height: 24px; margin-left: -40px; background: rgba(232,185,176,.78); transform: rotate(2deg); }
+  .bottom { text-align: center; padding: 8px 20px 64px; }
+
+  .float-heart { position: fixed; z-index: 30; color: var(--soft); pointer-events: none; animation: floatup 2.2s ease-out forwards; }
+
+  /* ---------- photo viewer ---------- */
+  .lightbox { position: fixed; inset: 0; z-index: 40; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 22px; background: rgba(48,37,32,.94); }
+  .lightbox.open { display: flex; animation: fade .25s both; }
+  .lightbox img { max-width: 100%; max-height: 78svh; border-radius: 8px; object-fit: contain; }
+  .lightbox p { font: 600 26px/1 var(--hand); color: #f1e3d8; }
+  .close { position: absolute; top: calc(14px + env(safe-area-inset-top, 0px)); right: 16px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; }
+
+  /* ---------- motion ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes floaty { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-6px) rotate(2deg); } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+  @keyframes beat { 0%, 100% { scale: 1; } 15% { scale: 1.12; } 30% { scale: 1; } 45% { scale: 1.08; } }
+  @keyframes floatup { from { opacity: 1; transform: translate(0, 0) scale(.6); } to { opacity: 0; transform: translate(var(--dx), -230px) scale(1.3); } }
+
+  /* ---------- bigger screens ---------- */
+  @media (min-width: 820px) {
+    .story { padding-top: 56px; }
+    h2 { font-size: 34px; }
+    .timeline { gap: 84px; }
+    .timeline::before { left: 50%; margin-left: -1px; }
+    .step { padding-left: 0; grid-template-columns: 1fr 1fr; column-gap: 84px; align-items: center; }
+    .knot { left: 50%; top: 50%; margin: -15px 0 0 -15px; }
+    .step:nth-child(even) .frame { order: 2; justify-self: start; }
+    .step:nth-child(odd) .frame { justify-self: end; }
+    .step:nth-child(even) .text { order: 1; text-align: right; justify-self: end; }
+    .step:nth-child(even) .text p { margin-left: auto; }
+    .text h3 { font-size: 42px; }
+    .closing { max-width: 640px; }
+    .more { font-size: 33px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; }
+    .yarn .thread { stroke-dashoffset: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar"><a class="back" href="index.html?back=1">&larr; back to your birthday page</a></header>
+
+<main>
+  <section class="hero">
+    <svg class="yarn" viewBox="0 0 130 100" aria-hidden="true">
+      <circle cx="52" cy="50" r="36" fill="#e8b9b0" stroke="#5b4a42" stroke-width="2.6"/>
+      <path d="M20 40 Q52 18 84 40" fill="none" stroke="#b98a82" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M17 55 Q52 33 87 58" fill="none" stroke="#b98a82" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M24 71 Q54 52 80 74" fill="none" stroke="#b98a82" stroke-width="2.2" stroke-linecap="round"/>
+      <path class="thread" d="M84 74 C104 84 92 96 124 88" fill="none" stroke="#5b4a42" stroke-width="2.6" stroke-linecap="round"/>
+    </svg>
+    <div class="eyebrow">a little collection, just for you</div>
+    <h1>Little pieces <span>of us</span></h1>
+    <p class="sub">Some things take time. You're worth every little bit of it.</p>
+    <a class="scroll" href="#story"><span>SCROLL A LITTLE</span><i>&darr;</i></a>
+  </section>
+
+  <section class="story" id="story">
+    <div class="head reveal">
+      <div class="eyebrow">made by hand, with love</div>
+      <h2>A little something for you</h2>
+      <p>A few moments from making your gift. Every stitch has a little bit of you in it.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="step reveal">
+        <span class="knot"></span>
+        <div class="frame" style="--tilt:-1.6deg">
+          <div class="photo" data-label="the beginning" data-file="crochet-1.jpg" role="button" tabindex="0" aria-label="View photo: Yarn and materials"><img src="images/crochet-1.jpg" alt="Yarn and materials" loading="lazy"></div>
+          <div class="cap">the beginning</div>
+        </div>
+        <div class="text"><div class="label">01 &middot; THE BEGINNING</div><h3>Picking the yarn</h3><p>It started with a little idea, some yarn, and the thought of you.</p></div>
+      </article>
+
+      <article class="step reveal">
+        <span class="knot"></span>
+        <div class="frame" style="--tilt:1.4deg">
+          <div class="photo" data-label="one stitch at a time" data-file="crochet-2.jpg" role="button" tabindex="0" aria-label="View photo: Crochet gift in progress"><img src="images/crochet-2.jpg" alt="Crochet gift in progress" loading="lazy"></div>
+          <div class="cap">one stitch at a time</div>
+        </div>
+        <div class="text"><div class="label">02 &middot; IN PROGRESS</div><h3>One stitch at a time</h3><p>A little progress, a few retries, and a lot of patience.</p></div>
+      </article>
+
+      <article class="step reveal">
+        <span class="knot"></span>
+        <div class="frame" style="--tilt:-1deg">
+          <div class="photo" data-label="just for you" data-file="crochet-3.jpg" role="button" tabindex="0" aria-label="View photo: Finished crochet gift"><img src="images/crochet-3.jpg" alt="Finished crochet gift" loading="lazy"></div>
+          <div class="cap">just for you</div>
+        </div>
+        <div class="text"><div class="label">03 &middot; ALMOST YOURS</div><h3>Made for you</h3><p>Not perfect, maybe. But made carefully, and made only with you in mind.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="closing reveal">
+    <div class="divider"><button class="heart-btn" id="heartBtn" aria-label="Send some hearts">&hearts;</button></div>
+    <p class="more">I don't wanna be in a future where we ain't together, I can't even imagine getting older and we are strangers.</p>
+    <p class="choose">And if I had to choose all over again,<br><span>I'd still choose you.</span></p>
+    <p class="ps">Shitt. Birthday wish korte giye love letter banaye felchiii, Happy Birthday Emmaaa.</p>
+  </footer>
+
+  <div class="bottom"><a class="back-btm" href="index.html?back=1">&larr; back to your birthday page</a></div>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="close" id="close" aria-label="Close">&times;</button>
+  <img id="large" alt="Selected memory">
+  <p id="caption"></p>
+</div>
+
 <script>
-const box=document.getElementById('lightbox'),large=document.getElementById('large');
-document.querySelectorAll('.item').forEach(b=>b.addEventListener('click',()=>{const im=b.querySelector('img');if(!im||!im.complete||!im.naturalWidth)return;large.src=b.dataset.full;box.classList.add('open')}));
-function closeBox(){box.classList.remove('open');large.removeAttribute('src')}
-document.getElementById('close').addEventListener('click',closeBox);box.addEventListener('click',e=>{if(e.target===box)closeBox()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox()});
-if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x))}else document.querySelectorAll('.reveal').forEach(x=>x.classList.add('show'));
-</script></body></html>
+  var $ = function (s) { return document.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+  // a friendly placeholder if a photo is missing
+  $$('.photo').forEach(function (ph) {
+    var img = ph.querySelector('img');
+    function fail() {
+      ph.classList.add('empty');
+      ph.removeAttribute('role'); ph.removeAttribute('tabindex');
+      ph.innerHTML = '<div class="placeholder"><b>' + ph.dataset.label + '</b><span>add ' + ph.dataset.file + '</span></div>';
+    }
+    if (img.complete && !img.naturalWidth) fail(); else img.addEventListener('error', fail, { once: true });
+  });
+
+  // tap a photo to see it big
+  var box = $('#lightbox'), large = $('#large'), cap = $('#caption');
+  function openPhoto(ph) {
+    var im = ph.querySelector('img');
+    if (!im || !im.naturalWidth) return;
+    large.src = im.currentSrc || im.src; large.alt = im.alt; cap.textContent = ph.dataset.label;
+    box.classList.add('open'); document.body.style.overflow = 'hidden';
+  }
+  function closeBox() { box.classList.remove('open'); large.removeAttribute('src'); document.body.style.overflow = ''; }
+  $$('.photo').forEach(function (ph) {
+    ph.addEventListener('click', function () { openPhoto(ph); });
+    ph.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPhoto(ph); } });
+  });
+  $('#close').addEventListener('click', closeBox);
+  box.addEventListener('click', function (e) { if (e.target === box) closeBox(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeBox(); });
+
+  // hearts when she taps the little heart
+  $('#heartBtn').addEventListener('click', function (e) {
+    var r = e.currentTarget.getBoundingClientRect();
+    for (var i = 0; i < 14; i++) {
+      var h = document.createElement('span');
+      h.className = 'float-heart'; h.textContent = '\u2665';
+      h.style.left = (r.left + r.width / 2 - 8 + (Math.random() * 40 - 20)) + 'px';
+      h.style.top = (r.top + 10) + 'px';
+      h.style.fontSize = (14 + Math.random() * 14) + 'px';
+      h.style.setProperty('--dx', (Math.random() * 170 - 85) + 'px');
+      h.style.animationDelay = (Math.random() * 0.5) + 's';
+      document.body.appendChild(h);
+      setTimeout(function (el) { el.remove(); }, 3000, h);
+    }
+  });
+
+  // the top "back" button only shows at the very top; once she scrolls it slips away (the one at the bottom stays)
+  var topbar = $('.topbar');
+  function checkTop() { topbar.classList.toggle('hide', window.scrollY > 30); }
+  window.addEventListener('scroll', checkTop, { passive: true });
+  checkTop();
+
+  // fade things in as she scrolls
+  var items = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('show'); });
+  }
+</script>
+</body>
+</html>
