@@ -94,6 +94,18 @@
   .ps::before { content: ""; position: absolute; top: -12px; left: 50%; width: 80px; height: 24px; margin-left: -40px; background: rgba(232,185,176,.78); transform: rotate(2deg); }
   .bottom { text-align: center; padding: 8px 20px 64px; }
 
+
+  /* ---------- her photo + note ---------- */
+  .portrait { max-width: 520px; margin: 0 auto; padding: 30px 22px 6px; text-align: center; }
+  .portrait .frame { margin: 0 auto; width: min(100%, 340px); }
+  .photo.tall { aspect-ratio: 3 / 4; }
+  .paper-note { position: relative; max-width: 340px; margin: 44px auto 0; padding: 26px 24px 22px; background: var(--paper); border-radius: 4px; box-shadow: 0 12px 28px rgba(91,74,66,.15); transform: rotate(-1deg); font: 500 clamp(19px, 5vw, 22px)/1.45 var(--hand); text-align: left; }
+  .paper-note::before { content: ""; position: absolute; top: -12px; left: 50%; width: 80px; height: 24px; margin-left: -40px; background: rgba(232,185,176,.78); transform: rotate(2deg); }
+  .paper-note b { display: block; font-size: 1.12em; margin-bottom: 6px; }
+  .paper-note span { display: block; text-align: right; margin-top: 8px; }
+  .goal { margin: 40px auto 4px; }
+  .goal .frame { margin: 0 auto; width: min(100%, 330px); }
+
   .float-heart { position: fixed; z-index: 30; color: var(--soft); pointer-events: none; animation: floatup 2.2s ease-out forwards; }
 
   /* ---------- photo viewer ---------- */
@@ -200,11 +212,24 @@
     </div>
   </section>
 
+  <section class="portrait reveal">
+    <div class="frame" style="--tilt:-1deg">
+      <div class="photo tall" data-label="my favorite person" data-file="emma.jpg" role="button" tabindex="0" aria-label="View photo: Emma"><img src="images/emma.jpg" alt="Emma smiling" loading="lazy"></div>
+      <div class="cap">my favorite person</div>
+    </div>
+    <p class="paper-note"><b>Dear Emma,</b>This is a demo note. Your real words will go right here, in the same handwriting, just like this.<span>- Rakib</span></p>
+  </section>
+
   <footer class="closing reveal">
     <div class="divider"><button class="heart-btn" id="heartBtn" aria-label="Send some hearts">&hearts;</button></div>
     <p class="lead">instead of saying &ldquo;I love you&rdquo;, I wanna say...</p>
     <p class="verse"><span>Tu agar samne ho kaise</span><span>mein khud ko rakh pau hosh mein..</span><span class="gap">Darta hai dil khata yeh kar baithe</span><span>na mohabbat ke josh mein</span></p>
     <p class="more">I don't wanna be in a future where we ain't together, I can't even imagine getting older and we are strangers.</p>
+    <figure class="goal reveal">
+      <div class="frame" style="--tilt:1deg">
+        <div class="photo tall" data-label="the goal" data-file="the-goal.jpg" role="button" tabindex="0" aria-label="View photo: the goal"><img src="images/the-goal.jpg" alt="Two pairs of hands with rings, linked by their little fingers: young on top, older below, with the words the goal between them" loading="lazy"></div>
+      </div>
+    </figure>
     <p class="choose">And if I had to choose all over again,<br><span>I'd still choose you.</span></p>
     <p class="ps">Shitt. Birthday wish korte giye love letter banaye felchiii, Happy Birthday Emmaaa.</p>
   </footer>
