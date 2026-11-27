@@ -159,6 +159,65 @@
     .reveal { opacity: 1; transform: none; }
     .yarn .thread { stroke-dashoffset: 0; }
   }
+
+  /* ---------- secret playlist unlock ---------- */
+  .playlist-invite { margin: 22px auto 0; text-align: center; }
+  .playlist-trigger, .playlist-link {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    min-height: 0; padding: 9px 16px; border: 1px solid var(--line);
+    border-radius: 999px; background: var(--paper); color: var(--soft);
+    font: 700 13px/1.35 var(--sans); text-decoration: none; cursor: pointer;
+    box-shadow: 0 5px 16px rgba(91,74,66,.10); transition: transform .2s, box-shadow .2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .playlist-trigger:active, .playlist-link:active { transform: scale(.97); }
+  .playlist-hint { margin-top: 12px; color: var(--soft); font: 500 17px/1.2 var(--hand); }
+  .password-modal {
+    position: fixed; inset: 0; z-index: 60; display: none; align-items: center;
+    justify-content: center; padding: 22px; background: rgba(48,37,32,.58);
+    -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
+  }
+  .password-modal.open { display: flex; animation: fade .2s both; }
+  .password-card {
+    position: relative; width: min(100%, 370px); padding: 32px 24px 26px;
+    border: 1px solid rgba(214,191,177,.8); border-radius: 8px;
+    background: var(--paper); text-align: center; box-shadow: 0 18px 55px rgba(48,37,32,.24);
+  }
+  .password-card::before {
+    content: ""; position: absolute; top: -11px; left: 50%; width: 78px; height: 22px;
+    margin-left: -39px; background: rgba(232,185,176,.78); transform: rotate(-2deg);
+  }
+  .password-card h2 { font: 600 27px/1.15 var(--hand); margin-bottom: 8px; }
+  .password-card .modal-copy { color: var(--soft); font-size: 12px; line-height: 1.6; margin-bottom: 22px; }
+  .roller-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 auto 18px; }
+  .roller-group { display: grid; gap: 7px; }
+  .roller-group label { color: var(--soft); font-size: 10px; font-weight: 700; letter-spacing: 2px; }
+  .roller-group select {
+    width: 100%; height: 58px; padding: 0 12px; border: 1px solid var(--line);
+    border-radius: 6px; background: #f8f0e8; color: var(--ink);
+    font: 600 24px var(--sans); text-align: center; text-align-last: center;
+    outline: none; appearance: none; -webkit-appearance: none;
+    box-shadow: inset 0 2px 5px rgba(91,74,66,.05);
+  }
+  .password-hint { color: var(--soft); font: 500 17px/1.2 var(--hand); margin: 2px 0 18px; }
+  .unlock-btn {
+    width: 100%; min-height: 46px; border: 0; border-radius: 999px;
+    background: var(--soft); color: #fffaf3; font: 700 13px var(--sans); cursor: pointer;
+  }
+  .password-error { min-height: 18px; margin-top: 11px; color: #a65f59; font-size: 11px; }
+  .playlist-unlocked { display: none; margin-top: 16px; }
+  .playlist-unlocked.show { display: block; animation: rise .35s both; }
+  .playlist-unlocked p { color: var(--soft); font: 500 18px/1.3 var(--hand); margin-bottom: 12px; }
+  .playlist-link { background: #f1e4da; color: var(--ink); width: 100%; }
+  .modal-close {
+    position: absolute; top: 12px; right: 13px; width: 34px; height: 34px;
+    border: 0; border-radius: 50%; background: #f1e4da; color: var(--soft);
+    font-size: 22px; cursor: pointer;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .password-modal.open, .playlist-unlocked.show { animation: none; }
+  }
+
 </style>
 </head>
 <body>
@@ -245,11 +304,88 @@
       </div>
     </figure>
     <p class="choose">And if I had to choose all over again,<br><span>I'd still choose you.</span></p>
+
     <p class="ps">Shitt. Birthday wish korte giye love letter banaye felchiii, Happy Birthday Emmaaa.</p>
   </footer>
 
-  <div class="bottom"><a class="back-btm" href="index.html?back=1">&larr; back to your birthday page</a></div>
+  <div class="bottom">
+    <a class="back-btm" href="index.html?back=1">&larr; back to your birthday page</a>
+    <div class="playlist-invite">
+      <button class="playlist-trigger" id="playlistTrigger" type="button">Wanna see some of the videos making you your gift?</button>
+    </div>
+  </div>
 </main>
+
+
+<div class="password-modal" id="passwordModal" role="dialog" aria-modal="true" aria-labelledby="passwordTitle">
+  <div class="password-card">
+    <button class="modal-close" id="passwordClose" type="button" aria-label="Close">&times;</button>
+    <h2 id="passwordTitle">A little secret</h2>
+    <p class="modal-copy">Some memories need a tiny key. Pick the day and month.</p>
+    <div class="roller-fields">
+      <div class="roller-group">
+        <label for="meetDay">DAY</label>
+        <select id="meetDay" aria-label="Day">
+          <option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+        </select>
+      </div>
+      <div class="roller-group">
+        <label for="meetMonth">MONTH</label>
+        <select id="meetMonth" aria-label="Month">
+          <option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+        </select>
+      </div>
+    </div>
+    <p class="password-hint">Hint: the day we met first.</p>
+    <button class="unlock-btn" id="unlockPlaylist" type="button">Unlock</button>
+    <p class="password-error" id="passwordError" role="status" aria-live="polite"></p>
+    <div class="playlist-unlocked" id="playlistUnlocked">
+      <p>You found it. Here's a little look behind the gift.</p>
+      <a class="playlist-link" href="https://youtube.com/playlist?list=PLMdAR2XmynS8" target="_blank" rel="noopener noreferrer">Watch the making of your gift <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</div>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
   <button class="close" id="close" aria-label="Close">&times;</button>
@@ -287,7 +423,44 @@
   });
   $('#close').addEventListener('click', closeBox);
   box.addEventListener('click', function (e) { if (e.target === box) closeBox(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeBox(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeBox(); closePassword(); } });
+
+
+  // password-gated playlist
+  var passwordModal = $('#passwordModal');
+  var playlistTrigger = $('#playlistTrigger');
+  var passwordClose = $('#passwordClose');
+  var dayPicker = $('#meetDay');
+  var monthPicker = $('#meetMonth');
+  var passwordError = $('#passwordError');
+  var playlistUnlocked = $('#playlistUnlocked');
+
+  function openPassword() {
+    passwordModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    dayPicker.focus();
+  }
+  function closePassword() {
+    passwordModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  playlistTrigger.addEventListener('click', openPassword);
+  passwordClose.addEventListener('click', closePassword);
+  passwordModal.addEventListener('click', function (e) {
+    if (e.target === passwordModal) closePassword();
+  });
+  $('#unlockPlaylist').addEventListener('click', function () {
+    if (dayPicker.value === '28' && monthPicker.value === '01') {
+      passwordError.textContent = '';
+      playlistUnlocked.classList.add('show');
+      $('#unlockPlaylist').textContent = 'Unlocked';
+      $('#unlockPlaylist').disabled = true;
+      $('#unlockPlaylist').style.opacity = '.65';
+    } else {
+      playlistUnlocked.classList.remove('show');
+      passwordError.textContent = 'Not quite. Think of the day we first met.';
+    }
+  });
 
   // hearts when she taps the little heart
   $('#heartBtn').addEventListener('click', function (e) {
