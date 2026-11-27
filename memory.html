@@ -106,6 +106,11 @@
   .goal { margin: 40px auto 4px; }
   .goal .frame { margin: 0 auto; width: min(100%, 330px); }
 
+  /* ---------- throwback collage ---------- */
+  .throwback { max-width: 520px; margin: 0 auto; padding: 60px 22px 8px; text-align: center; }
+  .throwback .eyebrow { margin-bottom: 10px; }
+  .throwback .frame { margin: 30px auto 0; width: min(100%, 360px); }
+
   .float-heart { position: fixed; z-index: 30; color: var(--soft); pointer-events: none; animation: floatup 2.2s ease-out forwards; }
 
   /* ---------- photo viewer ---------- */
@@ -218,6 +223,15 @@
       <div class="cap">my favorite person</div>
     </div>
     <p class="paper-note"><b>Dear Emma,</b>This is a demo note. Your real words will go right here, in the same handwriting, just like this.<span>- Rakib</span></p>
+  </section>
+
+  <section class="throwback reveal">
+    <div class="eyebrow">a little throwback</div>
+    <h2>Long before all of this</h2>
+    <div class="frame" style="--tilt:1.2deg">
+      <div class="photo tall" data-label="where it all began &#128521;" data-file="childhood.jpg" role="button" tabindex="0" aria-label="View photo: where it all began"><img src="images/childhood.jpg" alt="Nine small photo-booth style pictures of a boy in a checked shirt and a girl in a red dress, posing together, hugging and making funny faces" loading="lazy"></div>
+      <div class="cap">where it all began &#128521;</div>
+    </div>
   </section>
 
   <footer class="closing reveal">
